@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SoftRender</title>
+</head>
+
+<body>
+  <script src="https://static.cdn.oppenlab.com/common/vconsole/3.3.4/vconsole.min.js"></script>
+  <script>
+    new VConsole();
+  </script>
+  <script type="module">
+    import { SoftRenderer } from '../dist/bundle.js'
+
+    const canvas = document.createElement("canvas");
+    canvas.width = 800;
+    canvas.height = 600;
+    canvas.style.position = "absolute";
+    canvas.style.border = "1px solid";
+    document.body.appendChild(canvas);
+
+    const softRenderer = new SoftRenderer(canvas);
+    softRenderer.init();
+  </script>
+</body>
+
+</html>
